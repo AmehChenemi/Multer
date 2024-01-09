@@ -1,0 +1,25 @@
+const mongoose = require('mongoose')
+const userSchema = new mongoose.Schema({
+
+    fullname:{
+   type:String,
+   required: true
+
+    },
+    
+    stack:{
+        type:String,
+        enum:["Backend", "Frontend"],
+        required: true
+     
+         },
+         
+    profileImage:{
+        type:String,
+        required: true
+     
+         }
+},{timestamps:true})
+
+const user = mongoose.model('user',userSchema)
+module.exports = user
